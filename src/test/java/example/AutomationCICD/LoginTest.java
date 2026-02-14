@@ -38,19 +38,19 @@ public class LoginTest {
     }
 
     @Test
-    void invalidLoginTest() {
+void invalidLoginTest() {
 
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("1234");
-        driver.findElement(By.id("login-button")).click();
+    driver.findElement(By.id("user-name")).sendKeys("standard_user");
+    driver.findElement(By.id("password")).sendKeys("1234");
+    driver.findElement(By.id("login-button")).click();
 
-        String errorMsg = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
+    String errorMsg = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
 
-        assertEquals(
-            "Epic sadface: Username and password do not match any user in this service",
-            errorMsg
-        );
-    }
+    assertEquals(
+        "Epic sadface: Username and password do not match any user in this service",
+        errorMsg
+    );
+}
 
     @Test
     void emptyTest() {
